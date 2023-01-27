@@ -72,3 +72,9 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 sudo swapoff -a
 
 sudo systemctl enable kubelet
+
+NB: If when running the kubeadm reset/init and having the error, just vi /etc/docker/daemon.json then paste this
+{
+    "exec-opts": ["native.cgroupdriver=systemd"]
+}
+inside
