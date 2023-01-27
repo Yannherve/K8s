@@ -73,8 +73,11 @@ sudo swapoff -a
 
 sudo systemctl enable kubelet
 
-NB: If when running the kubeadm reset/init and having the error, just vi /etc/docker/daemon.json then paste this
+NB1: If when running the kubeadm reset/init and having the error, just vi /etc/docker/daemon.json then paste this
 {
     "exec-opts": ["native.cgroupdriver=systemd"]
 }
 inside
+
+
+NB2: sudo apt-get install -y kubelet=1.23.0-00 kubeadm=1.23.0-00 kubectl=1.23.0-00 to downgrade the current version because of his stability.
